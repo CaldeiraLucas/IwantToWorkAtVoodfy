@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voodfy Challenge</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="topbar">
+        <div class="brand">
+            <a href="#"><img src="../src/imgs/Voodfy.svg" alt="Voodfy brand"></a>
+        </div>
+        <div class="user-area">        
+            <p>Login</p>
+            <button type="button" class="button">SignUp</button>
+        </div>
+    </div>
+    <div class="container">
+        <h1>Decentralized video <br>hosting for <span><u>everyone</u></span></h1>
+        <h2>Just upload your video and stream it</h2>
+        <div v-if="!fileSubmited" class="outbox">
+            <form ref="form"  method="post" action="" enctype="multipart/form-data">
+                <label for="file" class="uploadbox" @drop="submit" @dragover="allowDrop":class="{'dragover':dropping}" @dragleave="dragLeave">
+                    <img src="../src/imgs/cloud_upload-24px.png" alt="upload icon">
+                    <input v-show="!true" type="file" name="files[]" id="file" accept=".mp4" data-multiple-caption="{count} files selected" multiple  @dragover="allowDrop":class="{'dragover':dropping}" @change="submit"/>
+                    <h2>{{ text }}</h2>
+                    <p>Only MP4 is the supported file format</p>
+                </label>
+            </form>
+        </div>
+        <div v-else-if="fileSubmited && !fileUploaded" class="outbox">
+            <div class="uploading">           
+                <h4>Uploading…</h4>
+                <p>{{ progress }}% - 15min left</p>
+                <div class="bar"><div v-bind:style="{width: progress + '%'}" class="progress-bar"></div></div>
+            </div> 
+        </div>
+        <div v-if="fileUploaded" class="success">
+            <img src="../src/imgs/Vector.png" alt="vector">
+            <h2>Upload completed. Preparing file...</h2>
+            <div class="bar"><div v-bind:style="{width: progress + '%'}" class="progress-bar"></div></div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="../src/scripts/script.js"></script>
+</body>
+</html>

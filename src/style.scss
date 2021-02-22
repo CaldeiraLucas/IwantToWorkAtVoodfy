@@ -1,0 +1,422 @@
+@import "variables";
+
+@media screen and (max-width: 768px) {
+    body {
+        margin: 0;
+        background-color: $bg-color;
+        font-family: $font;
+        letter-spacing: -0.01em;
+        text-align: center;
+        height: 100vh;
+        width: 100vw;
+    }
+    
+    .topbar {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        height: 70px;
+        background-color: $white;
+        box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.05);
+        font-family: $font;
+    
+        .brand {
+            margin-left: 20px;
+    
+            img {
+                width: 120%;
+            }
+        }
+    
+        .user-area {
+            display: flex;
+            justify-self: flex-end;
+            font-weight: 500;
+    
+            p {
+                font-size: 1rem;
+                color: $second-color;
+                cursor: pointer;
+            }
+        
+            .button {
+                margin: 0 10px 0 40px;
+                background-color: $blue;
+                color: $white;
+                border: none;
+                outline: none;
+                width: 100px;
+                height: 50px;
+                font-size: 1rem;
+                border-radius: 4px;
+                transition: $trans;
+            }
+    
+    
+        }
+    }
+    
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 5vh 5vw;
+        padding-bottom: 10vh;
+        color: $second-color; 
+    
+        h1 {
+            color: $first-color;
+            font-size: 2.7rem;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 3rem;
+            margin: 0;
+    
+            span { 
+                font-weight: 700;
+            }
+        }
+    
+        h2 {
+        font-weight: 400;
+        line-height: 2rem;
+        margin: 40px 0;
+        }
+    
+        .outbox {
+            //width: 450px;
+            background-color: $white;
+            padding: 30px;
+            box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            transition: $trans;
+        }
+    
+        .uploadbox {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed $second-color;
+            box-sizing: border-box;
+            border-radius: 5px;
+            padding: 25px 10px;
+            letter-spacing: 0em;
+            transition: $trans;
+            outline: none;
+    
+            h2 {
+                font-size: 1.5rem;
+                font-weight: 500;
+                line-height: 2rem;
+                margin: 0;
+            }
+    
+            p {
+                font-size: 1.2rem;
+                font-weight: 400;
+                line-height: 1.7rem;
+                letter-spacing: 0em;
+            }
+        }
+    
+        .uploading {
+            text-align: left;
+            transition: $trans;
+            background-color: $bg-color;
+            padding: 20px;
+            border-radius: 5px;
+    
+            h4 {
+                font-weight: 500;
+                font-size: 1.1rem;
+                color: $first-color;
+                margin: 0;
+            }
+    
+            p {
+                font-weight: 400;
+                font-size: 1.1 rem;
+                margin: 5px 0 10px 0;
+            }
+    
+            .bar {
+                width: 100%;
+                height: 2px;
+                background-color: $upload-bar-color;
+    
+                .progress-bar {
+                    width: 0%;
+                    height: 2px;
+                    background-color: $blue;
+                }
+            }
+        }
+    
+        .success {
+            //width: 500px;
+            background-color: $blue;
+            color: $white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+            border-radius: 5px;
+            padding: 40px 60px;
+            letter-spacing: 0em;
+            transition: $trans;
+    
+                h2 {
+                    font-size: 1.1rem;
+                    font-weight: 500;
+                    line-height: 2.4rem;
+                    margin: 14px 0 10px 0;
+                }
+    
+                .bar {
+                    width: 100%;
+                    height: 2px;
+                    background-color: rgba(255,255,255,0.1);
+        
+                    .progress-bar {
+                        width: 0%;
+                        height: 2px;
+                        background-color: $white;
+                    }
+                }
+        }
+    
+        .error {
+            display: none;
+        }
+    
+        .dragover {
+            background-color: $drop-hover;
+            border: 2px solid $blue;
+            transition: $trans;
+        }
+    }
+}
+
+@media screen and (min-width: 769px) {
+    body {
+        margin: 0;
+        background-color: $bg-color;
+        font-family: $font;
+        letter-spacing: -0.01em;
+        text-align: center;
+        height: 100vh;
+        //max-height: 900px;
+        width: calc(100vw - scrollbarWidth);
+    }
+
+    .topbar {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        height: 70px;
+        background-color: $white;
+        box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.05);
+        font-family: $font;
+
+        .brand {
+            margin-left: 20px;
+
+            img {
+                width: 120%;
+            }
+        }
+
+        .user-area {
+            display: flex;
+            justify-self: flex-end;
+            font-weight: 500;
+
+            p {
+                font-size: 1rem;
+                color: $second-color;
+                cursor: pointer;
+
+                &:hover {
+                    color: $blue;
+                    transition: $trans;
+                    
+                }
+            }
+        
+            .button {
+                margin: 0 10px 0 40px;
+                background-color: $blue;
+                color: $white;
+                border: none;
+                outline: none;
+                width: 140px;
+                height: 50px;
+                font-size: 1rem;
+                border-radius: 4px;
+                transition: $trans;
+
+                &:hover {
+                    background-color: $button-hover;
+                    transition: $trans;
+                    cursor: pointer;
+                }
+            }
+
+
+        }
+    }
+
+    .container {
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 10vh 5vw;
+        margin-top: 10vh;
+        padding-bottom: 15vh;
+        color: $second-color; 
+
+        h1 {
+            color: $first-color;
+            font-size: 3.5rem;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 3.8rem;
+            margin: 0;
+
+            span { 
+                font-weight: 700;
+            }
+        }
+
+        h2 {
+        font-weight: 400;
+        line-height: 2.5rem;
+        margin: 40px 0;
+        }
+
+        .outbox {
+            width: 450px;
+            background-color: $white;
+            padding: 40px;
+            box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            transition: $trans;
+        }
+
+        .uploadbox {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed $second-color;
+            box-sizing: border-box;
+            border-radius: 5px;
+            padding: 25px 10px;
+            letter-spacing: 0em;
+            transition: $trans;
+            outline: none;
+
+            &:hover{
+                border: 2px dashed $blue;
+                cursor: pointer;
+                transition: $trans;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+                font-weight: 500;
+                line-height: 2.4rem;
+                margin: 0;
+            }
+
+            p {
+                font-size: 1.2rem;
+                font-weight: 400;
+                line-height: 1rem;
+                letter-spacing: 0em;
+            }
+        }
+
+        .uploading {
+            text-align: left;
+            transition: $trans;
+            background-color: $bg-color;
+            padding: 20px;
+            border-radius: 5px;
+
+            h4 {
+                font-weight: 500;
+                font-size: 1.1rem;
+                color: $first-color;
+                margin: 0;
+            }
+
+            p {
+                font-weight: 400;
+                font-size: 1.1 rem;
+                margin: 5px 0 10px 0;
+            }
+
+            .bar {
+                width: 100%;
+                height: 2px;
+                background-color: $upload-bar-color;
+
+                .progress-bar {
+                    width: 0%;
+                    height: 2px;
+                    background-color: $blue;
+                }
+            }
+        }
+
+        .success {
+            width: 500px;
+            background-color: $blue;
+            color: $white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+            border-radius: 5px;
+            padding: 40px 60px;
+            letter-spacing: 0em;
+            transition: $trans;
+
+                h2 {
+                    font-size: 1.1rem;
+                    font-weight: 500;
+                    line-height: 2.4rem;
+                    margin: 14px 0 10px 0;
+                }
+
+                .bar {
+                    width: 100%;
+                    height: 2px;
+                    background-color: rgba(255,255,255,0.1);
+        
+                    .progress-bar {
+                        width: 0%;
+                        height: 2px;
+                        background-color: $white;
+                    }
+                }
+        }
+
+        .error {
+            display: none;
+        }
+
+        .dragover {
+            background-color: $drop-hover;
+            border: 2px solid $blue;
+            transition: $trans;
+        }
+    }
+}
